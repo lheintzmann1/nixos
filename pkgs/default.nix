@@ -18,10 +18,14 @@
     git
     git-lfs
     fastfetch
+    tree
 
     alacritty
 
     obsidian
+
+    # Fonts
+    jetbrains-mono
   ];
 
 }

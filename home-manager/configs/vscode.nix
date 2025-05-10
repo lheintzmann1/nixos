@@ -6,10 +6,10 @@
     extensions = with pkgs.vscode-extensions; [
       ms-python.python
       ms-vscode.cpptools
-      mshr-h.VerilogHDL
-      VisualStudioExptTeam.vscodeintellicode
+      mshr-h.veriloghdl
+      visualstudioexptteam.vscodeintellicode
       christian-kohler.path-intellisense
-      GitHub.copilot
+      github.copilot
     ];
     userSettings = {
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";

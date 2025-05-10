@@ -5,11 +5,13 @@
     enable = true;
     settings = {
       window = {
-        padding = { x = 10; y = 10; };
-        opacity = 0.9;
+        startup_mode = "Maximized";
       };
       font = {
-        normal = { family = "FiraCode"; style = "Regular"; };
+        normal = { family = "JetBrainsMono Nerd Font Mono"; };
+        bold = { family = "JetBrainsMono Nerd Font Mono"; };
+        italic = { family = "JetBrainsMono Nerd Font Mono"; };
+        bold_italic = { family = "JetBrainsMono Nerd Font Mono"; };
         size = 12;
       };
     };

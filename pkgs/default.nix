@@ -17,6 +17,7 @@
     gh
     git
     git-lfs
+    fastfetch
 
     alacritty
 

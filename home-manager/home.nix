@@ -3,6 +3,7 @@
 {
   imports = [
     ./configs/alacritty.nix
+    ./configs/vscode.nix
 ];
 
 home = {

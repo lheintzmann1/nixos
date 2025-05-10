@@ -20,6 +20,7 @@
     fastfetch
     tree
 
+    vscode
     alacritty
 
     obsidian

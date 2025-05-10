@@ -12,14 +12,32 @@
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
   let
+    inherit (self) outputs;
     system = "x86_64-linux";
     username = "lucas";
     hostname = "nixos";
+
+    lib = nixpkgs.lib;
+
+    overlays = [
+      (import ./overlays)
+    ];
+
+    nixpkgsConfig = {
+      config = {
+        allowUnfree = true;
+      };
+      inherit overlays;
+    };
   in
   {
-    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${hostname} = lib.nixosSystem {
       inherit system;
+      specialArgs = {
+        inherit inputs;
+      };
       modules = [
+        { nixpkgs = nixpkgsConfig; }
         ./configuration.nix
         home-manager.nixosModules.home-manager {
           home-manager = {

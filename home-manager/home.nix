@@ -23,6 +23,7 @@ home = {
 
 programs = {
   home-manager.enable = true;
+  bash.enable = true;
   };
   gtk = {
     enable = true;

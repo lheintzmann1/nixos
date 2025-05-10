@@ -20,7 +20,7 @@
     lib = nixpkgs.lib;
 
     overlays = [
-      (import ./overlays)
+      (import ./overlays inputs)
     ];
 
     nixpkgsConfig = {

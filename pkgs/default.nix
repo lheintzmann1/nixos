@@ -25,7 +25,7 @@
     obsidian
 
     # Fonts
-    jetbrains-mono
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
 }

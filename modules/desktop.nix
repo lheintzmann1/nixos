@@ -12,8 +12,13 @@
     yelp # Help
     epiphany # Web browser
     seahorse # Password manager
+    geary # Email client
     gnome-tour
     gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-weather
+    xterm
   ];
 
   # Install firefox.

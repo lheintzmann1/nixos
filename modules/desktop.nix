@@ -8,6 +8,10 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.xserver.excludePackages = with  pkgs; [
+    xterm
+  ];
+
   environment.gnome.excludePackages = with pkgs; [
     yelp # Help
     epiphany # Web browser
@@ -18,7 +22,6 @@
     gnome-maps
     gnome-music
     gnome-weather
-    xterm
   ];
 
   # Install firefox.

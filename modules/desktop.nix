@@ -9,7 +9,7 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver.excludePackages = with  pkgs; [
-    xterm
+
   ];
 
   environment.gnome.excludePackages = with pkgs; [

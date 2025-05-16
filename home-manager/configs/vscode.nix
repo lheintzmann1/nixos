@@ -6,8 +6,9 @@
     extensions = with pkgs.vscode-extensions; [
       ms-python.python
       ms-vscode.cpptools
+      bbenoist.Nix
       mshr-h.veriloghdl
-      teros-technology.teroshdl
+#      teros-technology.teroshdl
       visualstudioexptteam.vscodeintellicode
       christian-kohler.path-intellisense
       github.copilot

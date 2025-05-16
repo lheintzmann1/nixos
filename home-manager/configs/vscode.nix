@@ -7,6 +7,7 @@
       ms-python.python
       ms-vscode.cpptools
       mshr-h.veriloghdl
+      teros-technology.teroshdl
       visualstudioexptteam.vscodeintellicode
       christian-kohler.path-intellisense
       github.copilot

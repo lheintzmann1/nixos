@@ -18,7 +18,7 @@
     vscode
 
     # Fonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
 
     # Media
     # (empty for future packages)

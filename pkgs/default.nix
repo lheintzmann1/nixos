@@ -14,6 +14,15 @@
     gnome-tweaks
     gnomeExtensions.gtk4-desktop-icons-ng-ding
 
+    ## Whitesur GTK theme
+    whitesur-gtk-theme
+    whitesur-icon-theme
+    whitesur-cursors
+    
+    ## Additional theming tools
+    gnome-themes-extra
+    gtk-engine-murrine
+
     # Development
     vscode
 

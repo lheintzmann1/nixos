@@ -18,6 +18,7 @@
       ./modules/packages.nix
       ./modules/users.nix
       ./modules/fonts.nix
+      ./modules/themes.nix
     ];
 
   # This value determines the NixOS release from which the default

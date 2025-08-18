@@ -31,7 +31,7 @@
         "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
         "telemetry.telemetryLevel" = "off";
         "workbench.iconTheme" = "vscode-icons";
-        "workbench.colorTheme" = "Ayu Dark";
+        "workbench.colorTheme" = "Ayu Dark Bordered";
       };
     };
   };

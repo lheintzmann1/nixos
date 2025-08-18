@@ -1,3 +1,0 @@
-2025-08-19 01:04:34.233 [info] Log level: Info
-2025-08-19 01:04:35.979 [warning] [GitHubBranchProtectionProvider][updateRepositoryBranchProtection] Failed to update repository branch protection: No GitHub authentication session available.
-2025-08-19 01:04:54.658 [warning] [GitHubSourceControlHistoryItemDetailsProvider][_loadAssignableUsers] Failed to load assignable user(s) for lheintzmann1/nixos: Error: No GitHub authentication session available.

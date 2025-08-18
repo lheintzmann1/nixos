@@ -5,14 +5,22 @@
     enable = true;
     profiles.default = {    
 	    extensions = with pkgs.vscode-extensions; [
-      	ms-python.python
-      	ms-vscode.cpptools
-      	bbenoist.nix
-      	mshr-h.veriloghdl
-#        teros-technology.teroshdl  # waiting to be pushed in the stable channel
+        # Language Support
+        ms-python.python
+        bbenoist.nix
+        
+        # AI & Code Intelligence
         visualstudioexptteam.vscodeintellicode
-        christian-kohler.path-intellisense
         github.copilot
+        
+        # Navigation & Productivity
+        christian-kohler.path-intellisense
+        
+        # Themes
+        teabyii.ayu
+
+        # Icons
+        vscode-icons-team.vscode-icons
       ];
       userSettings = {
         "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";

@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:

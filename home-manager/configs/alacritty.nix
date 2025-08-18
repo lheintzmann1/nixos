@@ -1,9 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   programs.alacritty = {
     enable = true;
     settings = {
+      general = {
+        import = [
+          pkgs.alacritty-theme.ayu_dark
+        ];
+      };
       window = {
         startup_mode = "Maximized";
       };

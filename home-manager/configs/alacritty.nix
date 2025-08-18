@@ -6,7 +6,7 @@
     settings = {
       general = {
         import = [
-          inputs.alacritty-theme.ayu_dark
+          inputs.alacritty-theme.packages.${pkgs.system}.ayu_dark
         ];
       };
       window = {

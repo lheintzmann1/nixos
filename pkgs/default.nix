@@ -17,8 +17,6 @@
     # Development
     vscode
 
-    # Fonts
-    nerd-fonts.jetbrains-mono
 
     # Media
     # (empty for future packages)

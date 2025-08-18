@@ -27,6 +27,7 @@
       nerd-fonts.droid-sans-mono
       
       # Additional useful fonts
+      inter
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts

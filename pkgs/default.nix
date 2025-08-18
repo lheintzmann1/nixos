@@ -1,5 +1,15 @@
 { pkgs }:
 
+# WhiteSur Theme Configuration Options:
+# 
+# altVariants: [ "normal" "alt" "all" ] - Controls window decorations style
+# colorVariants: [ "light" "dark" ] - Light or dark theme variants  
+# opacityVariants: [ "normal" "solid" ] - Controls transparency levels
+# themeVariants: [ "default" "blue" "purple" "pink" "red" "orange" "yellow" "green" "grey" "all" ] - Color accent variants
+# nautilusSize: [ "default" "180" "220" "240" "260" "280" ] - Nautilus sidebar width in pixels  
+# panelOpacity: [ "default" "30" "45" "60" "75" ] - Panel transparency percentage
+# panelSize: [ "default" "smaller" "bigger" ] - Panel height (32px default, smaller=28px, bigger=40px)
+
 {
   systemPackages = with pkgs; [
     # CLI Tools
@@ -14,8 +24,13 @@
     gnome-tweaks
     gnomeExtensions.gtk4-desktop-icons-ng-ding
 
-    ## Whitesur GTK theme
-    whitesur-gtk-theme
+    ## Whitesur GTK theme (customized)
+    (whitesur-gtk-theme.override {
+      altVariants = [ "normal" ];
+      colorVariants = [ "dark" ];
+      opacityVariants = [ "normal" ];
+      themeVariants = [ "blue" ];
+    })
     whitesur-icon-theme
     whitesur-cursors
     

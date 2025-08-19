@@ -104,21 +104,16 @@
   gtk = {
     enable = true;
     theme = {
-      name = "WhiteSur-Dark";
-      package = pkgs.whitesur-gtk-theme.override {
-        altVariants = [ "normal" ];
-        colorVariants = [ "dark" ];
-        opacityVariants = [ "normal" ];
-        themeVariants = [ "blue" ];
-      };
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
     };
     iconTheme = {
-      name = "WhiteSur-dark";
-      package = pkgs.whitesur-icon-theme;
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
     };
     cursorTheme = {
-      name = "WhiteSur-cursors";
-      package = pkgs.whitesur-cursors;
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
       size = 24;
     };
   };
@@ -126,19 +121,19 @@
   # dconf
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      gtk-theme = "WhiteSur-Dark";
-      icon-theme = "WhiteSur-dark";
-      cursor-theme = "WhiteSur-cursors";
+      gtk-theme = "Adwaita-dark";
+      icon-theme = "Adwaita";
+      cursor-theme = "Adwaita";
       cursor-size = 24;
-      font-name = "Inter 11";
-      document-font-name = "Inter 11";
-      monospace-font-name = "JetBrainsMono Nerd Font 10";
+      font-name = "Cantarell 11";
+      document-font-name = "Cantarell 11";
+      monospace-font-name = "Source Code Pro 10";
     };
     
     "org/gnome/desktop/wm/preferences" = {
-      theme = "WhiteSur-Dark";
+      theme = "Adwaita";
       button-layout = ":minimize,maximize,close";
-      titlebar-font = "Inter Bold 11";
+      titlebar-font = "Cantarell Bold 11";
     };
     
     "org/gnome/mutter" = {

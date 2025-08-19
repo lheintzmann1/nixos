@@ -27,17 +27,7 @@ rec {
 
   # Desktop Environment
   desktop = with pkgs; [
-    # Whitesur GTK theme
-    (whitesur-gtk-theme.override {
-      altVariants = [ "normal" ];
-      colorVariants = [ "dark" ];
-      opacityVariants = [ "normal" ];
-      themeVariants = [ "blue" ];
-    })
-    whitesur-icon-theme
-    whitesur-cursors
-    
-    # GNOME
+    # GNOME utilities
     gnome-extension-manager
     gnome-tweaks
     

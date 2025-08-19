@@ -34,11 +34,68 @@
       enable = true;
       settings = {
         add_newline = false;
-        format = "$all$character";
-        character = {
-          success_symbol = "[➜](bold green)";
-          error_symbol = "[➜](bold red)";
+        format = "$directory$git_branch$git_status$line_break$character";
+        
+        directory = {
+          format = "[$path]($style)";
+          style = "bold blue";
+          truncation_length = 0;
+          truncate_to_repo = false;
         };
+        
+        git_branch = {
+          format = " on [$branch]($style)";
+          style = "bold purple";
+        };
+        
+        git_status = {
+          format = "[$all_status$ahead_behind]($style)";
+          style = "bold red";
+          conflicted = " ⚡";
+          ahead = " ⇡$\{count}";
+          behind = " ⇣$\{count}";
+          diverged = " ⇕⇡$\{ahead_count}⇣$\{behind_count}";
+          up_to_date = "";
+          untracked = " ?$\{count}";
+          stashed = " $$\{count}";
+          modified = " !$\{count}";
+          staged = " +$\{count}";
+          renamed = " »$\{count}";
+          deleted = " ✘$\{count}";
+        };
+        
+        character = {
+          success_symbol = "[❯](bold green)";
+          error_symbol = "[❯](bold red)";
+        };
+        
+        # Disable other modules
+        git_state.disabled = true;
+        git_metrics.disabled = true;
+        git_commit.disabled = true;
+        package.disabled = true;
+        nodejs.disabled = true;
+        python.disabled = true;
+        rust.disabled = true;
+        java.disabled = true;
+        golang.disabled = true;
+        php.disabled = true;
+        ruby.disabled = true;
+        docker_context.disabled = true;
+        kubernetes.disabled = true;
+        terraform.disabled = true;
+        aws.disabled = true;
+        gcloud.disabled = true;
+        azure.disabled = true;
+        nix_shell.disabled = true;
+        conda.disabled = true;
+        memory_usage.disabled = true;
+        cmd_duration.disabled = true;
+        time.disabled = true;
+        battery.disabled = true;
+        status.disabled = true;
+        hostname.disabled = true;
+        username.disabled = true;
       };
     };
   };

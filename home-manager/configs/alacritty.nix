@@ -12,7 +12,7 @@
       
       window = {
         startup_mode = "Maximized";
-        opacity = 0.95;  # Légère transparence
+        opacity = 0.95;
         blur = true;
         decorations = "full";
         padding = {
@@ -29,7 +29,6 @@
         size = 11;
       };
       
-      # Amélioration des performances
       env = {
         TERM = "alacritty";
       };

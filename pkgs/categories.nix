@@ -30,8 +30,6 @@ rec {
     # GNOME utilities
     gnome-extension-manager
     gnome-tweaks
-    gradience
-    adw-gtk3
     
     # GNOME Extensions
     gnomeExtensions.gtk4-desktop-icons-ng-ding

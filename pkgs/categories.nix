@@ -38,7 +38,7 @@ rec {
     gnomeExtensions.user-themes
 
     # WhiteSur theme components
-    Whitesur-icon-theme
+    whitesur-icon-theme
     whitesur-cursors
   ];
 

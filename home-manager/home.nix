@@ -108,8 +108,11 @@
       package = pkgs.gnome-themes-extra;
     };
     iconTheme = {
-      name = "WhiteSur-Dark";
-      package = pkgs.whitesur-icon-theme;
+      name = "WhiteSur-dark";
+      package = pkgs.whitesur-icon-theme.override {
+        boldPanelIcons = true;
+        alternativeIcons = true;
+      };
     };
     cursorTheme = {
       name = "WhiteSur-cursors";

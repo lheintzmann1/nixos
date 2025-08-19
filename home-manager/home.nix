@@ -108,12 +108,12 @@
       package = pkgs.gnome-themes-extra;
     };
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = "WhiteSur-Dark";
+      package = pkgs.whitesur-icon-theme;
     };
     cursorTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = "WhiteSur-cursors";
+      package = pkgs.whitesur-cursors;
       size = 24;
     };
   };
@@ -122,8 +122,8 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       gtk-theme = "Adwaita-dark";
-      icon-theme = "Adwaita";
-      cursor-theme = "Adwaita";
+      icon-theme = "WhiteSur-dark";
+      cursor-theme = "WhiteSur-cursors";
       cursor-size = 24;
       font-name = "Cantarell 11";
       document-font-name = "Cantarell 11";

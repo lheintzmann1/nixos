@@ -36,6 +36,10 @@ rec {
     gnomeExtensions.dash-to-dock
     gnomeExtensions.blur-my-shell
     gnomeExtensions.user-themes
+
+    # WhiteSur theme components
+    Whitesur-icon-theme
+    whitesur-cursors
   ];
 
   # Productivity (& Media)

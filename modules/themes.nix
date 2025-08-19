@@ -5,8 +5,8 @@
   services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
     [org.gnome.desktop.interface]
     gtk-theme='Adwaita-dark'
-    icon-theme='Adwaita'
-    cursor-theme='Adwaita'
+    icon-theme='WhiteSur-dark'
+    cursor-theme='WhiteSur-cursors'
     cursor-size=24
     
     [org.gnome.desktop.wm.preferences]

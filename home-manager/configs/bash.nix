@@ -21,6 +21,7 @@
       gl = "git log --oneline --graph --decorate";
       
       # Utils
+      ls = "eza";
       ll = "eza -la --git";
       la = "eza -a";
       l = "eza -l";

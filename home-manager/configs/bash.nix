@@ -14,11 +14,11 @@
       # nrb = "sudo nixos-rebuild boot --flake /etc/nixos";
       
       # Git
-      # gs = "git status";
-      # ga = "git add";
-      # gc = "git commit";
-      # gp = "git push";
-      # gl = "git log --oneline --graph --decorate";
+      gs = "git status";
+      ga = "git add";
+      gc = "git commit";
+      gp = "git push";
+      gl = "git log --oneline --graph --decorate";
       
       # Utils
       ll = "eza -la --git";

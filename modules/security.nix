@@ -27,12 +27,16 @@
   # AppArmor
   security.apparmor.enable = true;
   
-  # Don't ask root password for rebuild command
+  # Don't ask root password for rebuild command and git operations
   security.sudo.extraRules = [{
     users = [ "lucas" ];
     commands = [
       {
         command = "/run/current-system/sw/bin/nixos-rebuild";
+        options = [ "NOPASSWD" ];
+      }
+      {
+        command = "/run/current-system/sw/bin/git";
         options = [ "NOPASSWD" ];
       }
     ];

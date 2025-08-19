@@ -33,7 +33,7 @@
     starship = {
       enable = true;
       settings = {
-        add_newline = false;
+        add_newline = true;
         format = "$directory$git_branch$git_status$line_break$character";
         
         directory = {

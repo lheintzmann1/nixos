@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
-
-{
+{ config, ... }: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
+  
+  # Host-specific configuration goes here
   # Kernel optimizations
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;

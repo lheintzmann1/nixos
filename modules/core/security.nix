@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ user, ... }:
 
 {
   # Firewall
@@ -29,7 +29,7 @@
   
   # Don't ask root password for rebuild command and git operations
   security.sudo.extraRules = [{
-    users = [ "lucas" ];
+    users = [ user ];
     commands = [
       {
         command = "/run/current-system/sw/bin/nixos-rebuild";

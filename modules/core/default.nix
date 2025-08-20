@@ -1,8 +1,22 @@
-{ pkgs }:
-
-rec {
-  # CLI Tools
-  cli = with pkgs; [
+{ pkgs, user, ... }: {
+  imports = [
+    ./audio.nix
+    ./boot.nix
+    ./desktop.nix
+    ./fonts.nix
+    ./locale.nix
+    ./network.nix
+    ./security.nix
+  ];
+  
+  # User configuration
+  users.users.${user} = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+  
+  # Essential packages
+  environment.systemPackages = with pkgs; [
     # Version control
     gh git git-lfs
     
@@ -13,20 +27,14 @@ rec {
     
     # Network tools
     wget curl
-    nmap
-  ];
 
-  # Development
-  development = with pkgs; [
+    # Development
     vscode    
     
     # Git tools
     gitui
     lazygit
-  ];
 
-  # Desktop Environment
-  desktop = with pkgs; [
     # GNOME utilities
     gnome-extension-manager
     gnome-tweaks
@@ -40,19 +48,16 @@ rec {
     # WhiteSur theme components
     whitesur-icon-theme
     whitesur-cursors
-  ];
 
-  # Productivity (& Media)
-  productivity = with pkgs; [
+    # Productivity
     firefox
     alacritty
-    
-    vlc
     onlyoffice-desktopeditors
-  ];
+    
+    # Media
+    vlc
 
-  # System
-  system = with pkgs; [
+    # System
     ntfs3g
     os-prober
   ];

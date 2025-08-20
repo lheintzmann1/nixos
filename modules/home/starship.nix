@@ -1,35 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    ./configs/alacritty.nix
-    ./configs/vscode.nix
-    ./configs/git.nix
-    ./configs/bash.nix
-  ];
-
-  home = {
-    username = "lucas";
-    homeDirectory = "/home/lucas";
-    stateVersion = "24.11";
-
-    sessionVariables = {
-      EDITOR = "code";
-      TERMINAL = "alacritty";
-      BROWSER = "firefox";
-    };
-  };
-
   programs = {
-    home-manager.enable = true;
-    
-    # Moderns CLI tools
-    eza.enable = true;
-    bat.enable = true;
-    ripgrep.enable = true;
-    fd.enable = true;
-    
-    # Prompt
     starship = {
       enable = true;
       settings = {
@@ -97,51 +69,6 @@
         hostname.disabled = true;
         username.disabled = true;
       };
-    };
-  };
-
-  # GTK
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-    iconTheme = {
-      name = "WhiteSur-dark";
-      package = pkgs.whitesur-icon-theme.override {
-        boldPanelIcons = true;
-        alternativeIcons = true;
-      };
-    };
-    cursorTheme = {
-      name = "WhiteSur-cursors";
-      package = pkgs.whitesur-cursors;
-      size = 24;
-    };
-  };
-
-  # dconf
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "Adwaita-dark";
-      icon-theme = "WhiteSur-dark";
-      cursor-theme = "WhiteSur-cursors";
-      cursor-size = 24;
-      font-name = "Cantarell 11";
-      document-font-name = "Cantarell 11";
-      monospace-font-name = "Source Code Pro 10";
-    };
-    
-    "org/gnome/desktop/wm/preferences" = {
-      theme = "Adwaita";
-      button-layout = ":minimize,maximize,close";
-      titlebar-font = "Cantarell Bold 11";
-    };
-    
-    "org/gnome/mutter" = {
-      center-new-windows = true;
-      dynamic-workspaces = true;
     };
   };
 }

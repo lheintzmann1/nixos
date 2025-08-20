@@ -1,9 +1,9 @@
 {
-  description = "A very basic flake";
+  description = "Multi-host NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,47 +11,40 @@
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
-  let
-    inherit (self) outputs;
-    system = "x86_64-linux";
-    username = "lucas";
-    hostname = "nixos";
-
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: let
     lib = nixpkgs.lib;
-
-    overlays = [
-      (import ./overlays inputs)
+    
+    # Supported systems
+    systems = [ "x86_64-linux" "aarch64-linux" ];
+    
+    # Common configuration
+    commonModules = [
+      ./modules/common.nix
+      home-manager.nixosModules.home-manager
     ];
-
-    nixpkgsConfig = {
-      config = {
-        allowUnfree = true;
+    
+    # Host-specific configurations
+    hosts = {
+      nixos = {
+        system = "x86_64-linux";
+        user = "lucas";
+        modules = [ ./hosts/nixos ];
       };
-      inherit overlays;
+      # Add more hosts here as needed
+      # laptop = {
+      #   system = "x86_64-linux";
+      #   user = "lucas";
+      #   modules = [ ./hosts/laptop ];
+      # };
     };
-  in
-  {
-    nixosConfigurations.${hostname} = lib.nixosSystem {
+    
+    # Generate nixosConfigurations for each host
+    mkHost = hostname: { system, user, modules }: lib.nixosSystem {
       inherit system;
-      specialArgs = {
-        inherit inputs;
-      };
-      modules = [
-        { nixpkgs = nixpkgsConfig; }
-        ./configuration.nix
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            backupFileExtension = "backup";
-            users.${username} = import ./home-manager/home.nix;
-            extraSpecialArgs = {
-              inherit inputs;
-            };
-          };
-        }
-      ];
+      specialArgs = { inherit inputs hostname user; };
+      modules = commonModules ++ modules;
     };
+  in {
+    nixosConfigurations = lib.mapAttrs mkHost hosts;
   };
 }

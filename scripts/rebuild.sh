@@ -29,8 +29,9 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-# Default action
+# Parse arguments
 ACTION="${1:-switch}"
+HOSTNAME=$(hostname)
 
 # Validate action
 case "$ACTION" in
@@ -52,6 +53,7 @@ esac
 cd /etc/nixos
 
 print_status "Starting NixOS rebuild with action: $ACTION"
+print_status "Current hostname: $HOSTNAME"
 
 # Check if we're in a git repository and show current commit
 if [ -d .git ]; then
@@ -59,10 +61,13 @@ if [ -d .git ]; then
     print_status "Current commit: $CURRENT_COMMIT"
 fi
 
-# Run the rebuild command
-print_status "Running: sudo nixos-rebuild $ACTION --flake ."
+# Construct the flake target
+FLAKE_TARGET=".#$HOSTNAME"
 
-if sudo nixos-rebuild "$ACTION" --flake .; then
+# Run the rebuild command
+print_status "Running: sudo nixos-rebuild $ACTION --flake $FLAKE_TARGET"
+
+if sudo nixos-rebuild "$ACTION" --flake $FLAKE_TARGET; then
     print_success "NixOS rebuild completed successfully!"
     
     if [ "$ACTION" = "switch" ]; then

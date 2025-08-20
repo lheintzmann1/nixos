@@ -31,6 +31,7 @@ print_error() {
 # Parse arguments
 DRY_RUN=false
 CLEANUP_DAYS=3
+HOSTNAME=$(hostname)
 
 for arg in "$@"; do
     case $arg in
@@ -96,12 +97,15 @@ else
     fi
 fi
 
+# Construct the flake target
+FLAKE_TARGET=".#$HOSTNAME"
+
 # Rebuild system
 print_status "Rebuilding system configuration..."
 if [ "$DRY_RUN" = true ]; then
-    print_status "Would run: sudo nixos-rebuild switch --flake ."
+    print_status "Would run: sudo nixos-rebuild switch --flake $FLAKE_TARGET"
 else
-    if sudo nixos-rebuild switch --flake .; then
+    if sudo nixos-rebuild switch --flake $FLAKE_TARGET; then
         print_success "System rebuilt and activated successfully"
     else
         print_error "System rebuild failed"

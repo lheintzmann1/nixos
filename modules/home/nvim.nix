@@ -12,6 +12,7 @@
       bash-language-server
       nixd
       nodePackages.typescript-language-server
+      lua-language-server
 
       rustfmt clippy shellcheck shfmt
       nixfmt-rfc-style

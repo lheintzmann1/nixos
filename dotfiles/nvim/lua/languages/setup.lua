@@ -20,78 +20,85 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Rust
-if nixCats('general') then
-  lspconfig.rust_analyzer.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-      ['rust-analyzer'] = {
-        checkOnSave = {
-          command = "clippy",
-        },
-        cargo = {
-          features = "all",
-        },
+lspconfig.rust_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ['rust-analyzer'] = {
+      checkOnSave = {
+        command = "clippy",
+      },
+      cargo = {
+        features = "all",
       },
     },
-  })
+  },
+})
 
-  -- Rust tools setup
-  local rt = require("rust-tools")
-  rt.setup({
-    server = {
-      on_attach = function(_, bufnr)
-        on_attach(_, bufnr)
-        -- Rust-specific keymaps
-        vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-        vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-      end,
-      capabilities = capabilities,
-    },
-  })
+-- Rust tools setup
+local rt = require("rust-tools")
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      on_attach(_, bufnr)
+      -- Rust-specific keymaps
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+    capabilities = capabilities,
+  },
+})
 
-  -- Crates.nvim for Cargo.toml
-  require('crates').setup()
-end
+-- Crates.nvim for Cargo.toml
+require('crates').setup()
 
 -- TypeScript/JavaScript
-if nixCats('general') then
-  lspconfig.ts_ls.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-  })
-end
+lspconfig.ts_ls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
 
 -- Python
-if nixCats('general') then
-  lspconfig.pylsp.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-      pylsp = {
-        plugins = {
-          pycodestyle = { enabled = false },
-          mccabe = { enabled = false },
-          pyflakes = { enabled = false },
-          pylint = { enabled = false },
-        },
+lspconfig.pylsp.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = { enabled = false },
+        mccabe = { enabled = false },
+        pyflakes = { enabled = false },
+        pylint = { enabled = false },
       },
     },
-  })
-end
+  },
+})
 
 -- Bash
-if nixCats('general') then
-  lspconfig.bashls.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-  })
-end
+lspconfig.bashls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
 
 -- Nix
-if nixCats('general') then
-  lspconfig.nixd.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-  })
-end
+lspconfig.nixd.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+-- Lua
+lspconfig.lua_ls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      runtime = { version = 'LuaJIT' },
+      diagnostics = { globals = { 'vim' } },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
+      },
+      telemetry = { enable = false },
+    },
+  },
+})

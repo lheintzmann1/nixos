@@ -2,6 +2,7 @@
   imports = [
     ./alacritty.nix
     ./git.nix
+    ./nvim.nix
     ./shell.nix
     ./starship.nix
     ./vscode.nix

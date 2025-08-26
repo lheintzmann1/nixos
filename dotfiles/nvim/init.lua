@@ -1,5 +1,3 @@
--- nixCats Neovim Configuration
--- Simplified and optimized configuration
 
 -- Set leader keys
 vim.g.mapleader = ' '

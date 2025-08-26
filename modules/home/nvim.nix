@@ -1,121 +1,75 @@
-{ inputs, pkgs, ... }: {
-  imports = [ inputs.nixCats.homeModules.default ];
-
-  nixCats = {
+{ pkgs, ... }: {
+  programs.neovim = {
     enable = true;
-    packageNames = [ "nixCats" ];
-    luaPath = toString ../../dotfiles/nvim/lua;
-    
-    categoryDefinitions = { pkgs, settings, categories, extra, name, mkPlugin, ... }: {
-      # LSPs and development tools
-      lspsAndRuntimeDeps = {
-        # Essential tools
-        general = with pkgs; [
-          ripgrep
-          fd
-          # Language servers
-          rust-analyzer
-          bash-language-server
-          nixd
-          nodePackages.typescript-language-server
-          python311Packages.python-lsp-server
-          # Formatters and linters
-          rustfmt
-          clippy
-          shellcheck
-          shfmt
-          nixfmt-rfc-style
-          nodePackages.prettier
-          nodePackages.eslint
-          black
-          isort
-        ];
-      };
+    viAlias = true;
+    vimAlias = true;
 
-      # Essential plugins that load immediately
-      startupPlugins = {
-        always = with pkgs.vimPlugins; [
-          # Core functionality
-          plenary-nvim
-          nvim-web-devicons
-          nvim-notify
-          
-          # UI and visual
-          lualine-nvim
-          neovim-ayu
-          which-key-nvim
-          
-          # Essential editing
-          vim-sleuth
-          gitsigns-nvim
-          nvim-lspconfig
-        ];
-      };
+    # Runtime deps: LSPs, formatters, linters, CLIs
+    extraPackages = with pkgs; [
+      ripgrep fd git
 
-      # Lazy-loaded plugins
-      optionalPlugins = {
-        general = with pkgs.vimPlugins; [
-          # Completion
-          nvim-cmp
-          cmp-nvim-lsp
-          cmp-buffer
-          cmp-path
-          luasnip
-          cmp_luasnip
-          friendly-snippets
-          
-          # Syntax and parsing
-          nvim-treesitter.withAllGrammars
-          nvim-treesitter-textobjects
-          
-          # File navigation
-          telescope-nvim
-          telescope-fzf-native-nvim
-          oil-nvim
-          
-          # Editing enhancements
-          nvim-surround
-          comment-nvim
-          undotree
-          indent-blankline-nvim
-          
-          # Git integration
-          vim-fugitive
-          
-          # Formatting and linting
-          conform-nvim
-          nvim-lint
-          fidget-nvim
-          
-          # Language-specific
-          rust-tools-nvim
-          crates-nvim
-          markdown-preview-nvim
-        ];
-      };
+      rust-analyzer
+      bash-language-server
+      nixd
+      nodePackages.typescript-language-server
 
-      environmentVariables = {
-        general = { EDITOR = "nvim"; };
-      };
+      rustfmt clippy shellcheck shfmt
+      nixfmt-rfc-style
+      nodePackages.prettier
+      nodePackages.eslint
+      black isort
+    ];
 
-      sharedLibraries = {
-        general = with pkgs; [];
-      };
-    };
+    # Plugin list
+    plugins = with pkgs.vimPlugins; [
+      # Core
+      plenary-nvim
+      nvim-web-devicons
+      nvim-notify
 
-    packageDefinitions = {
-      nixCats = { pkgs, name, ... }: {
-        settings = {
-          wrapRc = true;
-          aliases = [ "vim" "vi" ];
-        };
-        
-        categories = {
-          always = true;
-          general = true;
-          colorscheme = "ayu";
-        };
-      };
-    };
+      # UI
+      neovim-ayu
+      which-key-nvim
+
+      # LSP / Git
+      nvim-lspconfig
+      gitsigns-nvim
+      vim-fugitive
+
+      # Completion
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      luasnip
+      cmp_luasnip
+      friendly-snippets
+
+      # Treesitter
+      nvim-treesitter.withAllGrammars
+      nvim-treesitter-textobjects
+
+      # Telescope / file nav
+      telescope-nvim
+      telescope-fzf-native-nvim
+      oil-nvim
+
+      # Editing
+      nvim-surround
+      comment-nvim
+      undotree
+      indent-blankline-nvim
+
+      # Formatting & linting
+      conform-nvim
+      nvim-lint
+      fidget-nvim
+
+      # Rust
+      rust-tools-nvim
+      crates-nvim
+    ];
   };
+
+  xdg.configFile."nvim".source = ../../dotfiles/nvim;
 }

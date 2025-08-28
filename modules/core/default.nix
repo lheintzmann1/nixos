@@ -13,6 +13,7 @@
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.bash;
   };
   
   # Essential packages
@@ -61,4 +62,7 @@
     ntfs3g
     os-prober
   ];
+
+  # Allow Zsh as a login shell
+  environment.shells = [ pkgs.zsh ];
 }

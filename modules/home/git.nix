@@ -3,35 +3,16 @@
 {
   programs.git = {
     enable = true;
-    userName = "lheintzmann1";
-    userEmail = "lheintzmann1@disroot.org";
-    
-    extraConfig = {
-      init.defaultBranch = "main";
-      push.default = "simple";
-      pull.rebase = true;
-      rerere.enabled = true;
-      
-      core.preloadindex = true;
-      core.fscache = true;
-      gc.auto = 256;
-    };
-    
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        light = false;
-        side-by-side = true;
-      };
-    };
   };
   
   programs.gh = {
     enable = true;
-    settings = {
-      editor = "code";
-      protocol = "https";
-    };
   };
+
+  # Source Git and GH configs from dotfiles
+  xdg.configFile."git/config".source = ../../dotfiles/git/gitconfig;
+  xdg.configFile."git/ignore".source = ../../dotfiles/git/gitignore;
+  home.file.".gitconfig".source = ../../dotfiles/git/gitconfig; # ensure Git sees it if XDG isn't used
+
+  xdg.configFile."gh/config.yml".source = ../../dotfiles/gh/config.yml;
 }

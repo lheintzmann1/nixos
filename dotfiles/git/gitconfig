@@ -1,0 +1,21 @@
+[user]
+	name = lheintzmann1
+	email = lheintzmann1@disroot.org
+[init]
+	defaultBranch = main
+[push]
+	default = simple
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
+[core]
+	preloadindex = true
+	fscache = true
+[gc]
+	auto = 256
+[delta]
+	navigate = true
+	light = false
+	side-by-side = true
+

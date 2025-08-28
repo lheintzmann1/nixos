@@ -34,8 +34,10 @@
 
     ## Dev tools
     # Rust
-    rustup
+    rustc
     cargo
+    rust-analyzer
+    rustfmt
 
     # C/C++
     gcc

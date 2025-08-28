@@ -6,6 +6,7 @@
     ./bash.nix
     ./starship.nix
     ./vscode.nix
+    ./zsh.nix
   ];
   
   home = {

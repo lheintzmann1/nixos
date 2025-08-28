@@ -1,0 +1,29 @@
+# History & options
+setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY EXTENDED_HISTORY
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+
+autoload -Uz compinit && compinit
+
+# Keybindings
+bindkey -e
+
+# Plugins via Nix-provided features
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+if command -v fzf >/dev/null 2>&1; then
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fi
+
+# Aliases (re-use Bash aliases if present)
+if [ -f "$HOME/.bash_aliases" ]; then
+  source "$HOME/.bash_aliases"
+fi
+
+# Prompt via Starship
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+eval "$(starship init zsh)"
+
+

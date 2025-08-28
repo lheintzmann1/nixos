@@ -32,10 +32,18 @@
     # Development
     vscode    
 
-    # Languages tools
+    ## Dev tools
+    # Rust
     rustup
+    cargo
+
+    # C/C++
     gcc
+
+    # JS/TS
     nodejs
+
+    # Perl
     perl
     
     # Git tools

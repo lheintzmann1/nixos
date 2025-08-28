@@ -1,0 +1,26 @@
+# Completion and history
+shopt -s histappend
+HISTCONTROL=ignoredups:ignorespace
+HISTSIZE=10000
+
+# Aliases
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph --decorate'
+
+alias ls='eza'
+alias ll='eza -la --git'
+alias la='eza -a'
+alias l='eza -l'
+alias tree='eza --tree'
+alias cat='bat'
+alias grep='rg'
+alias find='fd'
+
+# Prompt via Starship
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+eval "$(starship init bash)"
+
+

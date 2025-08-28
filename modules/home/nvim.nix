@@ -14,12 +14,7 @@
       tree-sitter
       curl
       unzip
-
-      # Languages tools
-      rustup
       gcc
-      nodejs
-      perl
 
       # Language servers
       rust-analyzer

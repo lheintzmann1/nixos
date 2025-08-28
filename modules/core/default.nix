@@ -31,6 +31,12 @@
 
     # Development
     vscode    
+
+    # Languages tools
+    rustup
+    gcc
+    nodejs
+    perl
     
     # Git tools
     gitui

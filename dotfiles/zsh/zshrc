@@ -22,8 +22,6 @@ if [ -f "$HOME/.bash_aliases" ]; then
   source "$HOME/.bash_aliases"
 fi
 
-# Prompt via Starship
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-eval "$(starship init zsh)"
+# Prompt via Starship (handled by Home Manager)
 
 

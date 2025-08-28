@@ -3,7 +3,7 @@
     ./alacritty.nix
     ./git.nix
     ./nvim.nix
-    ./shell.nix
+    ./bash.nix
     ./starship.nix
     ./vscode.nix
   ];

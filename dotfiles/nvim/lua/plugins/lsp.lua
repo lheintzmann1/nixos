@@ -33,7 +33,7 @@ local servers = {
   'ts_ls',
   'html',
   'cssls',
-  'perlls',
+  'perlnavigator',
 }
 
 -- Lua: configure workspace for Neovim

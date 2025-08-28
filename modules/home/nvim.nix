@@ -3,7 +3,7 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    defaultEditor = true;
+    # defaultEditor = true;
 
     # Runtime dependencies: LSPs, formatters, linters, debuggers, and tools
     extraPackages = with pkgs; [
@@ -25,29 +25,28 @@
       lua-language-server           # Lua LSP
       nodePackages.typescript-language-server  # TS/JS LSP
       nodePackages.vscode-langservers-extracted  # HTML/CSS/JSON LSP
-      perl-language-server          # Perl LSP
+      perlnavigator          # Perl LSP
 
       # Formatters
       rustfmt                       # Rust formatter
       black                         # Python formatter
       isort                         # Python import formatter
-      autopep8                      # Python formatter
+      python312Packages.autopep8    # Python formatter
       shfmt                         # Shell formatter
       nixfmt-rfc-style             # Nix formatter
       nodePackages.prettier        # JS/TS/HTML/CSS formatter
       stylua                        # Lua formatter
       clang-tools                   # C formatter (clang-format)
-      perltidy                      # Perl formatter
+      perl540Packages.PerlTidy      # Perl formatter
 
       # Linters
       shellcheck                    # Shell linter
       nodePackages.eslint          # JS/TS linter
-      flake8                        # Python linter
+      python312Packages.flake8      # Python linter
       pylint                        # Python linter
       mypy                          # Python type checker
       clippy                        # Rust linter
       nixpkgs-fmt                   # Nix linter
-      perl-critic                   # Perl linter
 
       # Debuggers
       gdb                           # C/C++ debugger
@@ -108,8 +107,6 @@
       # Language extras
       rust-tools-nvim
       crates-nvim
-      vim-perl
-      vim-nix
 
       # Utilities
       fidget-nvim

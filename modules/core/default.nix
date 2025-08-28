@@ -31,6 +31,22 @@
 
     # Development
     vscode    
+
+    ## Dev tools
+    # Rust
+    rustc
+    cargo
+    rust-analyzer
+    rustfmt
+
+    # C/C++
+    gcc
+
+    # JS/TS
+    nodejs
+
+    # Perl
+    perl
     
     # Git tools
     gitui

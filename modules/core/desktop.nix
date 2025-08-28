@@ -18,4 +18,10 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.user-themes
   ];
+
+  # GNOME settings
+  services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
+    [org.gnome.desktop.wm.preferences]
+    button-layout=':minimize,maximize,close'
+  '';
 }

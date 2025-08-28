@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ... }:
 
 {
-  programs.starship.enable = true;
-
-  # Source starship configuration from dotfiles
-  xdg.configFile."starship".source = ../../dotfiles/starship;
+  programs.starship = {
+    enable = true;
+    settings = builtins.fromTOML (builtins.readFile ../../dotfiles/starship/starship.toml);
+  };
 }

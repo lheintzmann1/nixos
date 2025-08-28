@@ -19,8 +19,6 @@ alias cat='bat'
 alias grep='rg'
 alias find='fd'
 
-# Prompt via Starship
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-eval "$(starship init bash)"
+# Prompt via Starship (handled by Home Manager)
 
 

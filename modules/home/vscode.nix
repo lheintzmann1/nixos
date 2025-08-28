@@ -22,17 +22,10 @@
         # Icons
         vscode-icons-team.vscode-icons
       ];
-      userSettings = {
-        "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
-        "editor.fontSize" = 12;
-        "editor.tabSize" = 2;
-        "editor.formatOnSave" = true;
-        "window.zoomLevel" = 1;
-        "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
-        "telemetry.telemetryLevel" = "off";
-        "workbench.iconTheme" = "vscode-icons";
-        "workbench.colorTheme" = "Ayu Dark Bordered";
-      };
     };
   };
+
+  # Source VSCode user config from dotfiles
+  xdg.configFile."Code/User/settings.json".source = ../../dotfiles/vscode/settings.json;
+  xdg.configFile."Code/User/keybindings.json".source = ../../dotfiles/vscode/keybindings.json;
 }

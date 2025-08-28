@@ -1,50 +1,11 @@
 { inputs, pkgs, ... }:
 
 {
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      general = {
-        import = [
-          inputs.alacritty-theme.packages.${pkgs.system}.ayu_dark
-        ];
-      };
-      
-      window = {
-        startup_mode = "Maximized";
-        opacity = 0.95;
-        blur = true;
-        decorations = "full";
-        padding = {
-          x = 8;
-          y = 8;
-        };
-      };
-      
-      font = {
-        normal = { family = "JetBrainsMono Nerd Font Mono"; };
-        bold = { family = "JetBrainsMono Nerd Font Mono"; };
-        italic = { family = "JetBrainsMono Nerd Font Mono"; };
-        bold_italic = { family = "JetBrainsMono Nerd Font Mono"; };
-        size = 11;
-      };
-      
-      env = {
-        TERM = "alacritty";
-      };
-      
-      cursor = {
-        style = {
-          shape = "Block";
-          blinking = "Off";
-        };
-        vi_mode_style = "Underline";
-      };
-      
-      scrolling = {
-        history = 10000;
-        multiplier = 3;
-      };
-    };
-  };
+  programs.alacritty.enable = true;
+
+  # Source Alacritty config from dotfiles
+  xdg.configFile."alacritty".source = ../../dotfiles/alacritty;
+
+  # Provide theme file via flake input so it can be imported from the TOML
+  xdg.configFile."alacritty/theme.toml".source = inputs.alacritty-theme.packages.${pkgs.system}.ayu_dark;
 }

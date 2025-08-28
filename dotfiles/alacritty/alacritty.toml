@@ -1,0 +1,43 @@
+import = ["~/.config/alacritty/theme.toml"]
+
+[window]
+startup_mode = "Maximized"
+opacity = 0.95
+decorations = "full"
+blur = true
+
+[window.padding]
+x = 8
+y = 8
+
+[font]
+size = 11
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+
+[env]
+TERM = "alacritty"
+
+[cursor]
+
+[cursor.style]
+shape = "Block"
+blinking = "Off"
+
+vi_mode_style = "Underline"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+

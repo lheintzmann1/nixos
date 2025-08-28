@@ -30,7 +30,7 @@ local servers = {
   'bashls',
   'nixd',
   'lua_ls',
-  'tsserver',
+  'ts_ls',
   'html',
   'cssls',
   'perlls',

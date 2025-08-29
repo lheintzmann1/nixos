@@ -13,7 +13,7 @@
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
   };
   
   # Essential packages

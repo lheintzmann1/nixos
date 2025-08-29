@@ -11,48 +11,43 @@
       ripgrep
       fd
       git
-      tree-sitter
       curl
       unzip
       gcc
 
       # Language servers
       rust-analyzer
-      clang-tools                    # C/C++ LSP (clangd)
-      pyright                        # Python LSP
-      bash-language-server           # Bash LSP
-      nixd                          # Nix LSP
-      lua-language-server           # Lua LSP
-      nodePackages.typescript-language-server  # TS/JS LSP
+      clang-tools                                # C/C++ LSP (clangd)
+      pyright                                    # Python LSP
+      bash-language-server                       # Bash LSP
+      nixd                                       # Nix LSP
+      lua-language-server                        # Lua LSP
+      nodePackages.typescript-language-server    # TS/JS LSP
       nodePackages.vscode-langservers-extracted  # HTML/CSS/JSON LSP
-      perlnavigator          # Perl LSP
+      perlnavigator                              # Perl LSP
 
       # Formatters
-      rustfmt                       # Rust formatter
-      black                         # Python formatter
-      isort                         # Python import formatter
-      python312Packages.autopep8    # Python formatter
-      shfmt                         # Shell formatter
-      nixfmt-rfc-style             # Nix formatter
-      nodePackages.prettier        # JS/TS/HTML/CSS formatter
-      stylua                        # Lua formatter
-      clang-tools                   # C formatter (clang-format)
-      perl540Packages.PerlTidy      # Perl formatter
+      rustfmt
+      black
+      isort
+      shfmt
+      nixfmt-rfc-style
+      nodePackages.prettier
+      stylua
+      # clang-format provided by clang-tools
+      perl540Packages.PerlTidy
 
       # Linters
-      shellcheck                    # Shell linter
-      nodePackages.eslint          # JS/TS linter
-      python312Packages.flake8      # Python linter
-      pylint                        # Python linter
-      mypy                          # Python type checker
-      clippy                        # Rust linter
-      nixpkgs-fmt                   # Nix linter
+      shellcheck
+      nodePackages.eslint
+      python312Packages.flake8
+      # Nix linting handled by built-in tools; external linter optional
 
       # Debuggers
-      gdb                           # C/C++ debugger
-      lldb                          # Alternative C/C++ debugger
-      python3Packages.debugpy       # Python debugger
-      nodejs                        # Node.js for JS/TS debugging
+      gdb
+      lldb
+      python3Packages.debugpy
+      nodejs
     ];
 
     # Plugin set (managed by Nix; loading orchestrated by lazy.nvim in Lua)

@@ -15,7 +15,7 @@
     };
 
     # Use external dotfiles for zshrc content
-    initExtra = builtins.readFile ../../dotfiles/zsh/zshrc;
+    initContent = builtins.readFile ../../dotfiles/zsh/zshrc;
   };
 
   # Useful tools for zsh

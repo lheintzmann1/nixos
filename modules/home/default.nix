@@ -2,7 +2,6 @@
   imports = [
     ./alacritty.nix
     ./bash.nix
-    ./emacs.nix
     ./git.nix
     ./nvim.nix
     ./starship.nix

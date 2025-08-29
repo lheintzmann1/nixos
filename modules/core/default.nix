@@ -15,6 +15,9 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
+
+  # Enable Zsh at the system level
+  programs.zsh.enable = true;
   
   # Essential packages
   environment.systemPackages = with pkgs; [

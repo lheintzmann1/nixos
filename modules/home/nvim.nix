@@ -26,7 +26,7 @@
       nodePackages.typescript-language-server    # TS/JS LSP
       nodePackages.vscode-langservers-extracted  # HTML/CSS/JSON LSP
       perlnavigator                              # Perl LSP
-      just-language-server                       # Justfile LSP
+      just-lsp                       # Justfile LSP
 
       # Formatters
       rustfmt

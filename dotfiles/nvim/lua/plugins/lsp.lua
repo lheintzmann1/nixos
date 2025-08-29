@@ -34,7 +34,7 @@ local servers = {
   'html',
   'cssls',
   'perlnavigator',
-  'jpls',
+  'just',
 }
 
 -- Lua: configure workspace for Neovim

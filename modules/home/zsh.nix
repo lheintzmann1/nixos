@@ -18,9 +18,14 @@
     initContent = builtins.readFile ../../dotfiles/zsh/zshrc;
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [ "--cmd" "cd" ];
+  };
+
   # Useful tools for zsh
   home.packages = with pkgs; [
-    zoxide
     fzf
   ];
 }

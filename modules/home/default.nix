@@ -1,9 +1,10 @@
 { inputs, pkgs, ... }: {
   imports = [
     ./alacritty.nix
+    ./bash.nix
+    ./emacs.nix
     ./git.nix
     ./nvim.nix
-    ./bash.nix
     ./starship.nix
     ./vscode.nix
     ./zsh.nix

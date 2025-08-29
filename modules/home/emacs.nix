@@ -10,7 +10,8 @@
   home = {
     packages = with pkgs; [
       # Fonts/icons that help some themes/UI
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
 
       # Org ecosystem helpers
       ripgrep

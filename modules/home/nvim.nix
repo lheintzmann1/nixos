@@ -14,6 +14,7 @@
       curl
       unzip
       gcc
+      just
 
       # Language servers
       rust-analyzer
@@ -25,6 +26,7 @@
       nodePackages.typescript-language-server    # TS/JS LSP
       nodePackages.vscode-langservers-extracted  # HTML/CSS/JSON LSP
       perlnavigator                              # Perl LSP
+      just-language-server                       # Justfile LSP
 
       # Formatters
       rustfmt
@@ -61,6 +63,7 @@
       neovim-ayu                   # Ayu theme for Neovim
       lualine-nvim
       which-key-nvim
+      vim-just                     # Justfile syntax & ft detection
 
       # File explorer and navigation
       nvim-tree-lua

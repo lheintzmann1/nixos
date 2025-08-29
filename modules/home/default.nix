@@ -4,6 +4,7 @@
     ./bash.nix
     ./git.nix
     ./nvim.nix
+    ./firefox.nix
     ./starship.nix
     ./vscode.nix
     ./zsh.nix
@@ -32,6 +33,7 @@
   # GTK theming
   gtk = {
     enable = true;
+    font = { name = "Inter"; size = 11; };
     theme = { name = "Adwaita-dark"; package = pkgs.gnome-themes-extra; };
     iconTheme = { name = "WhiteSur-dark"; package = pkgs.whitesur-icon-theme; };
     cursorTheme = { name = "WhiteSur-cursors"; package = pkgs.whitesur-cursors; };

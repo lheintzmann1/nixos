@@ -31,6 +31,17 @@
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
+      # Microsoft core fonts (includes Times New Roman)
+      corefonts
     ];
+
+    # Prefer Inter for system sans-serif (close to Segoe UI)
+    fontconfig = {
+      defaultFonts = {
+        sansSerif = [ "Inter" "Noto Sans" "DejaVu Sans" ];
+        serif = [ "Noto Serif" "DejaVu Serif" ];
+        monospace = [ "JetBrainsMono Nerd Font" "DejaVu Sans Mono" ];
+      };
+    };
   };
 }

@@ -26,6 +26,9 @@
     ripgrep.enable = true;
     fd.enable = true;
   };
+
+  # Shared shell aliases file, used by both Bash and Zsh
+  home.file.".bash_aliases".source = ../../dotfiles/bash/bash_aliases;
   
   # GTK theming
   gtk = {

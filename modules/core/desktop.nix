@@ -16,6 +16,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.dash-to-dock
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.gtk4-desktop-icons-ng-ding
     gnomeExtensions.user-themes
   ];
 

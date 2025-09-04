@@ -4,7 +4,7 @@
 HOST := `hostname`
 
 # Optional flake path; default to current directory
-FLAKE ?= .
+FLAKE := "."
 
 # Default recipe prints help
 default:

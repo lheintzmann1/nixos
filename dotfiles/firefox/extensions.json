@@ -1,55 +1,44 @@
 {
-  // Better Lyrics
   "betterlyrics@boidu.dev": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/better-lyrics/latest.xpi"
   },
-  // Buster
   "{e58d3966-3d76-4cd9-8552-1582fbc800c1}": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/buster-captcha-solver/latest.xpi"
   },
-  // Dark Reader
   "addon@darkreader.org": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi"
   },
-  // Github Repo Size
   "github-repo-size@deetss.com": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/github-repo-size/latest.xpi"
   },
-  // Return Youtube Dislike
   "{762f9885-5a13-4abd-9c77-433dcd38b8fd}": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi"
   },
-  // Simple Translate
   "simple-translate@sienori": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/simple-translate/latest.xpi"
   },
-  // SponsorBlock
   "sponsorBlocker@ajay.app": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi"
   },
-  // Startpage
   "{20fc2e06-e3e4-4b2b-812b-ab431220cada}": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/startpage-private-search/latest.xpi"
   },
-  // uBlock Origin
   "uBlock0@raymondhill.net": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
   },
-  // Unhook
   "myallychou@gmail.com": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/youtube-recommended-videos/latest.xpi"
   },
-  // Youtube NonStop
   "{0d7cafdd-501c-49ca-8ebb-e3341caaa55e}": {
     "installation_mode": "force_installed",
     "install_url": "https://addons.mozilla.org/firefox/downloads/latest/youtube-nonstop/latest.xpi"

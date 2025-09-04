@@ -24,23 +24,9 @@
     [org.gnome.desktop.wm.preferences]
     button-layout=':minimize,maximize,close'
 
-<<<<<<< HEAD
     [org.gnome.shell]
-    enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'user-theme@gnome-shell-extensions.gcampax.github.com']
+    enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'gtk4-ding@smedius.gitlab.com','user-theme@gnome-shell-extensions.gcampax.github.com']
 
-    [org.gnome.shell.extensions.dash-to-dock]
-    dock-position='BOTTOM'
-    dash-max-icon-size=36
-    click-action='minimize-or-previews'
-    show-trash=true
-    show-mounts=false
-
-    [org.gnome.shell.extensions.blur-my-shell]
-    sigma=30
-    brightness=0.8
-    style-components=['panel', 'dash', 'overview', 'applications']
-    hacks-level=2
-=======
     [org.gnome.shell.extensions.blur-my-shell]
     settings-version=2
 
@@ -114,6 +100,5 @@
     dark-text-in-labels=false
     icon-size='standard'
     show-trash=false
->>>>>>> 4899598 (GNOME: Configured extensions)
   '';
 }

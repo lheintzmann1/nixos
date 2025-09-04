@@ -50,6 +50,9 @@
 
     # Perl
     perl
+
+    # Just
+    just
     
     # Git tools
     gitui

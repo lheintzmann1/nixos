@@ -28,7 +28,10 @@
     tree fastfetch htop btop
     fd ripgrep bat eza
     unzip p7zip
-    
+
+    # CLI tools
+    exercism
+
     # Network tools
     wget curl
 

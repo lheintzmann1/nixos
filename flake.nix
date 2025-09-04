@@ -30,12 +30,11 @@
         user = "lucas";
         modules = [ ./hosts/nixos ];
       };
-      # Add more hosts here as needed
-      # laptop = {
-      #   system = "x86_64-linux";
-      #   user = "lucas";
-      #   modules = [ ./hosts/laptop ];
-      # };
+      laptop = {
+        system = "x86_64-linux";
+        user = "lucas";
+        modules = [ ./hosts/laptop ];
+      };
     };
     
     # Generate nixosConfigurations for each host

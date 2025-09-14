@@ -16,5 +16,5 @@
 
   xdg.configFile."gh/config.yml".source = lib.mkIf (!builtins.pathExists "${config.home.homeDirectory}/.config/gh/config.yml") {
 	source =  ../../dotfiles/gh/config.yml;
-  }
+  };
 }
